@@ -181,4 +181,48 @@ public class US1_Login_to_HomePage {
         actual_incorrectLoginOrPassword = driver.findElement(By.xpath("//div[.='Incorrect login or password']")).getText();
         Assert.assertEquals(actual_incorrectLoginOrPassword,expected_incorrectLoginOrPassword,"Failed");
     }
+    @Test
+    public void EmptyUserName(){
+        username = driver.findElement(By.name("USER_LOGIN"));
+        username.sendKeys("       ");
+
+        password= driver.findElement(By.name("USER_PASSWORD"));
+        password.sendKeys("UserUser");
+
+        clickLoginButton=driver.findElement(By.className("login-btn"));
+        clickLoginButton.click();
+
+        actual_incorrectLoginOrPassword = driver.findElement(By.xpath("//div[.='Incorrect login or password']")).getText();
+        Assert.assertEquals(actual_incorrectLoginOrPassword,expected_incorrectLoginOrPassword,"Failed");
+    }
+
+    @Test
+    public void EmptyPassword(){
+        username= driver.findElement(By.cssSelector("input[placeholder='Login']"));
+        username.sendKeys("marketing67@cydeo.com");
+
+        password= driver.findElement(By.xpath("//input[@placeholder='Password']"));
+        password.sendKeys("");
+
+        clickLoginButton= driver.findElement(By.cssSelector("input[type='submit'][value='Log In']"));
+        clickLoginButton.click();
+
+        actual_incorrectLoginOrPassword = driver.findElement(By.xpath("//div[.='Incorrect login or password']")).getText();
+        Assert.assertEquals(actual_incorrectLoginOrPassword,expected_incorrectLoginOrPassword,"Failed");
+    }
+
+    @Test
+    public void EmptyCredentials(){
+        username= driver.findElement(By.xpath("//input[contains(@name,'USER_LOGIN')]"));
+        username.sendKeys(" ");
+
+        password= driver.findElement(By.cssSelector("input[type='password']"));
+        password.sendKeys("");
+
+        clickLoginButton=driver.findElement(By.cssSelector("input[type='submit']"));
+        clickLoginButton.click();
+
+        actual_incorrectLoginOrPassword = driver.findElement(By.xpath("//div[.='Incorrect login or password']")).getText();
+        Assert.assertEquals(actual_incorrectLoginOrPassword,expected_incorrectLoginOrPassword,"Failed");
+    }
 }
