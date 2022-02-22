@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class US9_MarketingUserFunctionalityModule {
+public class US9_MarketingUserFunctionalityModules {
     WebDriver driver;
 
     //marketing67@cydeo.com
