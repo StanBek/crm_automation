@@ -111,7 +111,42 @@ public class US1_Login_to_HomePage {
         clickLoginButton.click();
     }
 
+    @Test
+    public void marketing67(){
+        username= driver.findElement(By.cssSelector("input[placeholder='Login']"));
+        username.sendKeys("marketing67@cydeo.com");
 
+        password= driver.findElement(By.xpath("//input[@placeholder='Password']"));
+        password.sendKeys("UserUser");
+
+        clickLoginButton= driver.findElement(By.cssSelector("input[type='submit'][value='Log In']"));
+        clickLoginButton.click();
+    }
+
+    @Test
+    public void marketing68(){
+        username = driver.findElement(By.cssSelector("div>input[name='USER_LOGIN']"));
+        username.sendKeys("marketing68@cydeo.com");
+
+        password = driver.findElement(By.cssSelector("div>input[name='USER_PASSWORD']"));
+        password.sendKeys("UserUser");
+
+        clickLoginButton = driver.findElement(By.cssSelector("div>input[value='Log In']"));
+        clickLoginButton.click();
+
+    }
+
+    @Test
+    public void marketing69(){
+        username = driver.findElement(By.cssSelector("input[class='login-inp'][type='text']"));
+        username.sendKeys("marketing69@cydeo.com");
+
+        password = driver.findElement(By.cssSelector("input[class='login-inp'][type='password']"));
+        password.sendKeys("UserUser");
+
+        clickLoginButton = driver.findElement(By.cssSelector("input[type='submit'][class='login-btn']"));
+        clickLoginButton.submit();
+    }
 
 
 }
