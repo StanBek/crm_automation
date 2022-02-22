@@ -13,6 +13,9 @@ import java.util.concurrent.TimeUnit;
 public class US1_Login_to_HomePage {
 
     WebDriver driver;
+    WebElement username;
+    WebElement password;
+    WebElement clickLoginButton;
 
     @BeforeMethod
     public void setUp(){
@@ -36,40 +39,79 @@ public class US1_Login_to_HomePage {
 
     @Test
     public void loginHr67(){
-        WebElement username = driver.findElement(By.xpath("//div/input[@name='USER_LOGIN']"));
+        username = driver.findElement(By.xpath("//div/input[@name='USER_LOGIN']"));
         username.sendKeys("hr67@cydeo.com");
 
-        WebElement password = driver.findElement(By.xpath("//div/input[@name='USER_PASSWORD']"));
+        password = driver.findElement(By.xpath("//div/input[@name='USER_PASSWORD']"));
         password.sendKeys("UserUser");
 
-        WebElement clickLoginButton = driver.findElement(By.xpath("//div/input[@value='Log In']"));
+        clickLoginButton = driver.findElement(By.xpath("//div/input[@value='Log In']"));
         clickLoginButton.click();
     }
 
     @Test
     public void loginHr68(){
-        WebElement username = driver.findElement(By.cssSelector("div>input[name='USER_LOGIN']"));
+        username = driver.findElement(By.cssSelector("div>input[name='USER_LOGIN']"));
         username.sendKeys("hr68@cydeo.com");
 
-        WebElement password = driver.findElement(By.cssSelector("div>input[name='USER_PASSWORD']"));
+        password = driver.findElement(By.cssSelector("div>input[name='USER_PASSWORD']"));
         password.sendKeys("UserUser");
 
-        WebElement clickLoginButton = driver.findElement(By.cssSelector("div>input[value='Log In']"));
+        clickLoginButton = driver.findElement(By.cssSelector("div>input[value='Log In']"));
         clickLoginButton.click();
 
     }
 
     @Test
     public void loginHr69(){
-        WebElement username = driver.findElement(By.cssSelector("input[class='login-inp'][type='text']"));
+        username = driver.findElement(By.cssSelector("input[class='login-inp'][type='text']"));
         username.sendKeys("hr69@cydeo.com");
 
-        WebElement password = driver.findElement(By.cssSelector("input[class='login-inp'][type='password']"));
+        password = driver.findElement(By.cssSelector("input[class='login-inp'][type='password']"));
         password.sendKeys("UserUser");
 
-        WebElement clickLoginButton = driver.findElement(By.cssSelector("input[type='submit'][class='login-btn']"));
+        clickLoginButton = driver.findElement(By.cssSelector("input[type='submit'][class='login-btn']"));
         clickLoginButton.submit();
     }
+
+    @Test
+    public void loginHelpDesk67(){
+        username = driver.findElement(By.name("USER_LOGIN"));
+        username.sendKeys("helpdesk67@cydeo.com");
+
+        password= driver.findElement(By.name("USER_PASSWORD"));
+        password.sendKeys("UserUser");
+
+        clickLoginButton=driver.findElement(By.className("login-btn"));
+        clickLoginButton.click();
+
+    }
+    @Test
+    public void loginHelpDesk68(){
+        username= driver.findElement(By.xpath("//input[contains(@name,'USER_LOGIN')]"));
+        username.sendKeys("helpdesk68@cydeo.com");
+
+        password= driver.findElement(By.cssSelector("input[type='password']"));
+        password.sendKeys("UserUser");
+
+        clickLoginButton=driver.findElement(By.cssSelector("input[type='submit']"));
+        clickLoginButton.click();
+
+    }
+
+    @Test
+    public void loginHelpDesk69(){
+        username= driver.findElement(By.cssSelector("input[placeholder='Login']"));
+        username.sendKeys("helpdesk69@cydeo.com");
+
+        password= driver.findElement(By.xpath("//input[@placeholder='Password']"));
+        password.sendKeys("UserUser");
+
+        clickLoginButton= driver.findElement(By.xpath("//input[@value='Log In']"));
+        clickLoginButton.click();
+    }
+
+
 
 
 }
