@@ -4,7 +4,6 @@ import org.testng.Assert;
 
 public class ModuleVerification {
 
-
     public static void tasksModule(String actualTitle) {
         Assert.assertEquals(actualTitle, "Site map");
     }
