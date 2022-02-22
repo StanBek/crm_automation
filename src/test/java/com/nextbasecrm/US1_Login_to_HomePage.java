@@ -4,6 +4,7 @@ import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -16,6 +17,8 @@ public class US1_Login_to_HomePage {
     WebElement username;
     WebElement password;
     WebElement clickLoginButton;
+    String actual_incorrectLoginOrPassword;
+    String expected_incorrectLoginOrPassword="Incorrect login or password";
 
     @BeforeMethod
     public void setUp(){
@@ -148,5 +151,34 @@ public class US1_Login_to_HomePage {
         clickLoginButton.submit();
     }
 
+    @Test
+    public void incorrectUsername(){
+        username = driver.findElement(By.cssSelector("input[class='login-inp'][type='text']"));
+        username.sendKeys("jdhfds@cydeo.com");
 
+        password = driver.findElement(By.cssSelector("input[class='login-inp'][type='password']"));
+        password.sendKeys("UserUser");
+
+        clickLoginButton = driver.findElement(By.cssSelector("input[type='submit'][class='login-btn']"));
+        clickLoginButton.submit();
+
+        actual_incorrectLoginOrPassword = driver.findElement(By.xpath("//div[.='Incorrect login or password']")).getText();
+
+        Assert.assertEquals(actual_incorrectLoginOrPassword,expected_incorrectLoginOrPassword,"Failed");
+    }
+
+    @Test
+    public void incorrectPassword(){
+        username = driver.findElement(By.cssSelector("div>input[name='USER_LOGIN']"));
+        username.sendKeys("marketing68@cydeo.com");
+
+        password = driver.findElement(By.cssSelector("div>input[name='USER_PASSWORD']"));
+        password.sendKeys("UserUser!");
+
+        clickLoginButton = driver.findElement(By.cssSelector("div>input[value='Log In']"));
+        clickLoginButton.click();
+
+        actual_incorrectLoginOrPassword = driver.findElement(By.xpath("//div[.='Incorrect login or password']")).getText();
+        Assert.assertEquals(actual_incorrectLoginOrPassword,expected_incorrectLoginOrPassword,"Failed");
+    }
 }
