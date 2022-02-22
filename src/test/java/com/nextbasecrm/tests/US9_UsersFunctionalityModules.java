@@ -56,7 +56,7 @@ public class US9_UsersFunctionalityModules {
         //1.Activity module
         WebElement ActivityStream = driver.findElement(By.xpath("//a[@title='Activity Stream']"));
         ActivityStream.click();
-        BrowserUtils.VerifyTitle(driver,"Portal");
+        BrowserUtils.verifyTitle(driver,"Portal");
 
     }
 
@@ -66,7 +66,7 @@ public class US9_UsersFunctionalityModules {
         //2.Tasks module
         WebElement TasksModule = driver.findElement(By.xpath("//a[@title='Tasks']"));
         TasksModule.click();
-        BrowserUtils.VerifyTitle(driver,"Site map");
+        BrowserUtils.verifyTitle(driver,"Site map");
     }
 
     @Test
@@ -75,7 +75,7 @@ public class US9_UsersFunctionalityModules {
         //3.ChatAndCalls module
         WebElement ChatAndCalls = driver.findElement(By.xpath("//a[@title='Chat and Calls']"));
         ChatAndCalls.click();
-        BrowserUtils.VerifyTitle(driver,"Chat and Calls");
+        BrowserUtils.verifyTitle(driver,"Chat and Calls");
     }
 
     @Test
@@ -84,7 +84,7 @@ public class US9_UsersFunctionalityModules {
         //4.Workgroups
         WebElement Workgroups = driver.findElement(By.xpath("//a[@title='Workgroups']"));
         Workgroups.click();
-        BrowserUtils.VerifyTitle(driver,"Workgroups and projects");
+        BrowserUtils.verifyTitle(driver,"Workgroups and projects");
     }
 
     @Test
@@ -93,7 +93,7 @@ public class US9_UsersFunctionalityModules {
         //5.DriveModule
         WebElement DriveModule = driver.findElement(By.xpath("//a[@title='Drive']"));
         DriveModule.click();
-        BrowserUtils.VerifyTitle(driver,"Site map");
+        BrowserUtils.verifyTitle(driver,"Site map");
     }
 
     @Test
@@ -102,7 +102,7 @@ public class US9_UsersFunctionalityModules {
         //6.CalendarModule
         WebElement CalendarModule = driver.findElement(By.xpath("//a[@title='Calendar']"));
         CalendarModule.click();
-        BrowserUtils.VerifyTitle(driver,"Site map");
+        BrowserUtils.verifyTitle(driver,"Site map");
     }
 
     @Test
@@ -111,7 +111,7 @@ public class US9_UsersFunctionalityModules {
         //7.ContactCenterModule
         WebElement ContactCenterModule = driver.findElement(By.xpath("//a[@title='Contact Center']"));
         ContactCenterModule.click();
-        BrowserUtils.VerifyTitle(driver,"Contact Center");
+        BrowserUtils.verifyTitle(driver,"Contact Center");
     }
 
     @Test
@@ -120,7 +120,7 @@ public class US9_UsersFunctionalityModules {
         //8.TimeAndReportsModule
         WebElement TimeAndReportsModule = driver.findElement(By.xpath("//a[@title='Time and Reports']"));
         TimeAndReportsModule.click();
-        BrowserUtils.VerifyTitle(driver,"Absence Chart");
+        BrowserUtils.verifyTitle(driver,"Absence Chart");
     }
 
     @Test
@@ -129,7 +129,7 @@ public class US9_UsersFunctionalityModules {
         //9.EmployeesModule
         WebElement EmployeesModule = driver.findElement(By.xpath("//a[@title='Employees']"));
         EmployeesModule.click();
-        BrowserUtils.VerifyTitle(driver,"Company Structure");
+        BrowserUtils.verifyTitle(driver,"Company Structure");
     }
 
     @Test
@@ -138,7 +138,7 @@ public class US9_UsersFunctionalityModules {
         //10.ServicesModule
         WebElement ServicesModule = driver.findElement(By.xpath("//a[@title='Services']"));
         ServicesModule.click();
-        BrowserUtils.VerifyTitle(driver,"Meeting Rooms");
+        BrowserUtils.verifyTitle(driver,"Meeting Rooms");
     }
 
     @Test
@@ -147,7 +147,7 @@ public class US9_UsersFunctionalityModules {
         //11.CompanyModule
         WebElement CompanyModule = driver.findElement(By.xpath("//a[@title='Company']"));
         CompanyModule.click();
-        BrowserUtils.VerifyTitle(driver,"Company");
+        BrowserUtils.verifyTitle(driver,"Company");
     }
 
 }
