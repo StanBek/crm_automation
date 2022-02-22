@@ -1,6 +1,6 @@
 package com.nextbasecrm.tests;
 
-import com.nextbasecrm.utilities.ModuleVerification;
+import com.nextbasecrm.utilities.BrowserUtils;
 import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -49,7 +49,7 @@ public class US9_HRUserFunctionalityModules {
         //1.Activity module
         WebElement ActivityStream = driver.findElement(By.xpath("//a[@title='Activity Stream']"));
         ActivityStream.click();
-        ModuleVerification.activityStreamModule(driver.getTitle());
+        BrowserUtils.activityStreamModule(driver.getTitle());
 
     }
 
@@ -59,7 +59,7 @@ public class US9_HRUserFunctionalityModules {
         //2.Tasks module
         WebElement TasksModule = driver.findElement(By.xpath("//a[@title='Tasks']"));
         TasksModule.click();
-        ModuleVerification.tasksModule(driver.getTitle());
+        BrowserUtils.tasksModule(driver.getTitle());
     }
 
     @Test
@@ -68,7 +68,7 @@ public class US9_HRUserFunctionalityModules {
         //3.ChatAndCalls module
         WebElement ChatAndCalls = driver.findElement(By.xpath("//a[@title='Chat and Calls']"));
         ChatAndCalls.click();
-        ModuleVerification.chatAndCallsModule(driver.getTitle());
+        BrowserUtils.chatAndCallsModule(driver.getTitle());
     }
 
     @Test
@@ -77,7 +77,7 @@ public class US9_HRUserFunctionalityModules {
         //4.Workgroups
         WebElement Workgroups = driver.findElement(By.xpath("//a[@title='Workgroups']"));
         Workgroups.click();
-        ModuleVerification.workgroupsAndProjectsModule(driver.getTitle());
+        BrowserUtils.workgroupsAndProjectsModule(driver.getTitle());
     }
 
     @Test
@@ -86,7 +86,7 @@ public class US9_HRUserFunctionalityModules {
         //5.DriveModule
         WebElement DriveModule = driver.findElement(By.xpath("//a[@title='Drive']"));
         DriveModule.click();
-        ModuleVerification.driveModule(driver.getTitle());
+        BrowserUtils.driveModule(driver.getTitle());
     }
 
     @Test
@@ -95,7 +95,7 @@ public class US9_HRUserFunctionalityModules {
         //6.CalendarModule
         WebElement CalendarModule = driver.findElement(By.xpath("//a[@title='Calendar']"));
         CalendarModule.click();
-        ModuleVerification.calendarModule(driver.getTitle());
+        BrowserUtils.calendarModule(driver.getTitle());
     }
 
     @Test
@@ -104,7 +104,7 @@ public class US9_HRUserFunctionalityModules {
         //7.ContactCenterModule
         WebElement ContactCenterModule = driver.findElement(By.xpath("//a[@title='Contact Center']"));
         ContactCenterModule.click();
-        ModuleVerification.contactCenterModule(driver.getTitle());
+        BrowserUtils.contactCenterModule(driver.getTitle());
     }
 
     @Test
@@ -113,7 +113,7 @@ public class US9_HRUserFunctionalityModules {
         //8.TimeAndReportsModule
         WebElement TimeAndReportsModule = driver.findElement(By.xpath("//a[@title='Time and Reports']"));
         TimeAndReportsModule.click();
-        ModuleVerification.timeAndReportsModule(driver.getTitle());
+        BrowserUtils.timeAndReportsModule(driver.getTitle());
     }
 
     @Test
@@ -122,7 +122,7 @@ public class US9_HRUserFunctionalityModules {
         //9.EmployeesModule
         WebElement EmployeesModule = driver.findElement(By.xpath("//a[@title='Employees']"));
         EmployeesModule.click();
-        ModuleVerification.employeesModule(driver.getTitle());
+        BrowserUtils.employeesModule(driver.getTitle());
     }
 
     @Test
@@ -131,7 +131,7 @@ public class US9_HRUserFunctionalityModules {
         //10.ServicesModule
         WebElement ServicesModule = driver.findElement(By.xpath("//a[@title='Services']"));
         ServicesModule.click();
-        ModuleVerification.servicesModule(driver.getTitle());
+        BrowserUtils.servicesModule(driver.getTitle());
     }
 
     @Test
@@ -140,6 +140,6 @@ public class US9_HRUserFunctionalityModules {
         //11.CompanyModule
         WebElement CompanyModule = driver.findElement(By.xpath("//a[@title='Company']"));
         CompanyModule.click();
-        ModuleVerification.companyModule(driver.getTitle());
+        BrowserUtils.companyModule(driver.getTitle());
     }
 }
