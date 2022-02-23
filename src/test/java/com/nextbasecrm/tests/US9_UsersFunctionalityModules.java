@@ -1,6 +1,7 @@
 package com.nextbasecrm.tests;
 
 import com.nextbasecrm.utilities.BrowserUtils;
+import com.nextbasecrm.utilities.CRM_Utilities;
 import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,15 +35,10 @@ public class US9_UsersFunctionalityModules {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://login2.nextbasecrm.com");
+        driver.get("https://login2.nextbasecrm.com/");
+        CRM_Utilities.crm_login(driver, UserName, Password);
 
-        //The User can navigate between modules successfully (expected result equals to actual result)
-        WebElement LoginBox = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
-        LoginBox.sendKeys(UserName);
-        WebElement PasswordBox = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
-        PasswordBox.sendKeys(Password);
-        WebElement LoginButton = driver.findElement(By.xpath("//input[@type='submit']"));
-        LoginButton.click();
+
     }
 
     @AfterMethod
@@ -51,103 +47,103 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_HrUserNavigationToActivityModule() {
+    public void test_UserNavigationToActivityModule() {
 
         //1.Activity module
         WebElement ActivityStream = driver.findElement(By.xpath("//a[@title='Activity Stream']"));
         ActivityStream.click();
-        BrowserUtils.verifyTitle(driver,"Portal");
+        BrowserUtils.verifyTitle(driver, "Portal");
 
     }
 
     @Test
-    public void test_HrUserNavigationToTaskModule() {
+    public void test_UserNavigationToTaskModule() {
 
         //2.Tasks module
         WebElement TasksModule = driver.findElement(By.xpath("//a[@title='Tasks']"));
         TasksModule.click();
-        BrowserUtils.verifyTitle(driver,"Site map");
+        BrowserUtils.verifyTitle(driver, "Site map");
     }
 
     @Test
-    public void test_HrUserNavigationToChatAndCallsModule() {
+    public void test_UserNavigationToChatAndCallsModule() {
 
         //3.ChatAndCalls module
         WebElement ChatAndCalls = driver.findElement(By.xpath("//a[@title='Chat and Calls']"));
         ChatAndCalls.click();
-        BrowserUtils.verifyTitle(driver,"Chat and Calls");
+        BrowserUtils.verifyTitle(driver, "Chat and Calls");
     }
 
     @Test
-    public void test_HrUserNavigationToWorkgroupsModule() {
+    public void test_UserNavigationToWorkgroupsModule() {
 
         //4.Workgroups
         WebElement Workgroups = driver.findElement(By.xpath("//a[@title='Workgroups']"));
         Workgroups.click();
-        BrowserUtils.verifyTitle(driver,"Workgroups and projects");
+        BrowserUtils.verifyTitle(driver, "Workgroups and projects");
     }
 
     @Test
-    public void test_HrUserNavigationToDriveModule() {
+    public void test_UserNavigationToDriveModule() {
 
         //5.DriveModule
         WebElement DriveModule = driver.findElement(By.xpath("//a[@title='Drive']"));
         DriveModule.click();
-        BrowserUtils.verifyTitle(driver,"Site map");
+        BrowserUtils.verifyTitle(driver, "Site map");
     }
 
     @Test
-    public void test_HrUserNavigationToCalendarModule() {
+    public void test_UserNavigationToCalendarModule() {
 
         //6.CalendarModule
         WebElement CalendarModule = driver.findElement(By.xpath("//a[@title='Calendar']"));
         CalendarModule.click();
-        BrowserUtils.verifyTitle(driver,"Site map");
+        BrowserUtils.verifyTitle(driver, "Site map");
     }
 
     @Test
-    public void test_HrUserNavigationToContactCenterModule() {
+    public void test_UserNavigationToContactCenterModule() {
 
         //7.ContactCenterModule
         WebElement ContactCenterModule = driver.findElement(By.xpath("//a[@title='Contact Center']"));
         ContactCenterModule.click();
-        BrowserUtils.verifyTitle(driver,"Contact Center");
+        BrowserUtils.verifyTitle(driver, "Contact Center");
     }
 
     @Test
-    public void test_HrUserNavigationToTimeAndReportsModule() {
+    public void test_UserNavigationToTimeAndReportsModule() {
 
         //8.TimeAndReportsModule
         WebElement TimeAndReportsModule = driver.findElement(By.xpath("//a[@title='Time and Reports']"));
         TimeAndReportsModule.click();
-        BrowserUtils.verifyTitle(driver,"Absence Chart");
+        BrowserUtils.verifyTitle(driver, "Absence Chart");
     }
 
     @Test
-    public void test_HrUserNavigationToEmployeesModule() {
+    public void test_UserNavigationToEmployeesModule() {
 
         //9.EmployeesModule
         WebElement EmployeesModule = driver.findElement(By.xpath("//a[@title='Employees']"));
         EmployeesModule.click();
-        BrowserUtils.verifyTitle(driver,"Company Structure");
+        BrowserUtils.verifyTitle(driver, "Company Structure");
     }
 
     @Test
-    public void test_HrUserNavigationToServicesModule() {
+    public void test_UserNavigationToServicesModule() {
 
         //10.ServicesModule
         WebElement ServicesModule = driver.findElement(By.xpath("//a[@title='Services']"));
         ServicesModule.click();
-        BrowserUtils.verifyTitle(driver,"Meeting Rooms");
+        BrowserUtils.verifyTitle(driver, "Meeting Rooms");
     }
 
     @Test
-    public void test_HrUserNavigationToCompanyModule() {
+    public void test_UserNavigationToCompanyModule() {
 
         //11.CompanyModule
         WebElement CompanyModule = driver.findElement(By.xpath("//a[@title='Company']"));
         CompanyModule.click();
-        BrowserUtils.verifyTitle(driver,"Company");
+        BrowserUtils.verifyTitle(driver, "Company");
     }
 
 }
