@@ -25,6 +25,16 @@ public class US9_UsersFunctionalityModules {
     //marketing67@cydeo.com
     //marketing68@cydeo.com
     //marketing69@cydeo.com
+    /*ArrayList<String> = new ArrayList
+
+    String Password = "UserUser";
+
+   List<WebElement> allUsers = new ArrayList<String>(UserName);
+    for ( WebElement we: allOptions) {
+        dropDown.sendKeys( Keys.DOWN );
+        BrowserUtils.sleep(2000);
+        if ( we.getText().contains( text ) ) select.selectByVisibleText("Value1");
+    */
 
     String UserName = "helpdesk67@cydeo.com";
     String Password = "UserUser";
