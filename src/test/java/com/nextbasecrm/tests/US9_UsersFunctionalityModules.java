@@ -4,15 +4,12 @@ import com.nextbasecrm.utilities.BrowserUtils;
 import com.nextbasecrm.utilities.CRM_Utilities;
 import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 public class US9_UsersFunctionalityModules {
@@ -30,17 +27,8 @@ public class US9_UsersFunctionalityModules {
     //marketing68@cydeo.com
     //marketing69@cydeo.com
 
-
-    /*ArrayList<String> = new ArrayList
-
+    String UserName = "helpdesk67@cydeo.com";
     String Password = "UserUser";
-
-   List<WebElement> allUsers = new ArrayList<String>(UserName);
-    for ( WebElement we: allOptions) {
-        dropDown.sendKeys( Keys.DOWN );
-        BrowserUtils.sleep(2000);
-        if ( we.getText().contains( text ) ) select.selectByVisibleText("Value1");
-    */
 
     @BeforeMethod
     public void setUpMethod() {
@@ -48,7 +36,8 @@ public class US9_UsersFunctionalityModules {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://login2.nextbasecrm.com/");
-       // CRM_Utilities.crm_login(driver, UserName, Password);
+        CRM_Utilities.crm_login(driver, UserName, Password);
+
 
     }
 
