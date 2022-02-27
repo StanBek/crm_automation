@@ -1,6 +1,7 @@
 package com.nextbasecrm.tests;
 
 import com.nextbasecrm.utilities.BrowserUtils;
+import com.nextbasecrm.utilities.CRM_Utilities;
 import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -35,21 +36,14 @@ public class US9_UsersFunctionalityModules {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://login2.nextbasecrm.com");
-
-        //The User can navigate between modules successfully (expected result equals to actual result)
-        WebElement LoginBox = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
-        LoginBox.sendKeys(UserName);
-        WebElement PasswordBox = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
-        PasswordBox.sendKeys(Password);
-        WebElement LoginButton = driver.findElement(By.xpath("//input[@type='submit']"));
-        LoginButton.click();
+        CRM_Utilities.crm_login(driver,UserName,Password);
     }
 
     @AfterMethod
     public void tearDown() {
         driver.quit();
     }
-
+    //The User can navigate between modules successfully (expected result equals to actual result)
     @Test
     public void test_HrUserNavigationToActivityModule() {
 
