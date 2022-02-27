@@ -41,9 +41,15 @@ public class US2_RememberMe_Checkbox {
 
         @Test
         public void click_Checkbox(){
-            //Click checkbox
+            //Verify user can check the "remember me" checkbox.
             WebElement click_Checkbox = driver.findElement(By.xpath("//input[@name='USER_REMEMBER']"));
             click_Checkbox.click();
+        }
+
+        @Test
+        public void confirm_RememberMeText(){
+            //Verify there is a “Remember me on this computer” message displayed.
+
         }
 
 
