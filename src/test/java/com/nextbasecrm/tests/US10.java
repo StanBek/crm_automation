@@ -47,6 +47,9 @@ public class US10 {
 
         WebElement inputTitle = driver.findElement(By.xpath("//input[@name='ACTION[0][ARGUMENTS][data][TITLE]']"));
         inputTitle.sendKeys("CYDEO");
+        inputTitle.clear();
+        inputTitle = driver.findElement(By.xpath("//input[@name='ACTION[0][ARGUMENTS][data][TITLE]']"));
+        inputTitle.sendKeys("");
     }
 
 
