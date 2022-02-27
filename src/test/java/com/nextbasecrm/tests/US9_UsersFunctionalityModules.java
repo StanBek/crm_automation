@@ -10,6 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class US9_UsersFunctionalityModules {
@@ -27,8 +28,6 @@ public class US9_UsersFunctionalityModules {
     //marketing68@cydeo.com
     //marketing69@cydeo.com
 
-    String UserName = "helpdesk67@cydeo.com";
-    String Password = "UserUser";
 
     @BeforeMethod
     public void setUpMethod() {
@@ -36,8 +35,27 @@ public class US9_UsersFunctionalityModules {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://login2.nextbasecrm.com/");
-        CRM_Utilities.crm_login(driver, UserName, Password);
+        String UserName = "marketing67@cydeo.com";
+        String Password = "UserUser";
 
+/*
+        ArrayList<String> UserName = new ArrayList<String>();
+        UserName.add("helpdesk67@cydeo.com");
+        UserName.add("helpdesk68@cydeo.com");
+        UserName.add("helpdesk69@cydeo.com");
+        UserName.add("hr67@cydeo.com");
+        UserName.add("hr68@cydeo.com");
+        UserName.add("hr69@cydeo.com");
+        UserName.add("marketing67@cydeo.com");
+        UserName.add("marketing68@cydeo.com");
+        UserName.add("marketing69@cydeo.com");
+
+        for (String each : UserName) {
+
+        }
+
+ */
+        CRM_Utilities.crm_login(driver, UserName, Password);
 
     }
 
