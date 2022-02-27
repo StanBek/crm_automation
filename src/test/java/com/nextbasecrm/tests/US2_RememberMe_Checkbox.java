@@ -24,3 +24,17 @@ public class US2_RememberMe_Checkbox {
         driver.close();
     }
 }
+
+//helpdesk67@cydeo.com
+//helpdesk68@cydeo.com
+//helpdesk69@cydeo.com
+
+//hr67@cydeo.com
+//hr68@cydeo.com
+//hr69@cydeo.com
+
+//marketing67@cydeo.com
+//marketing68@cydeo.com
+//marketing69@cydeo.com
+
+//password: UserUser
