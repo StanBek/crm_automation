@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -18,20 +19,12 @@ public class US10_CreateATask {
 
     @BeforeMethod
     public void setupMethod() {
-//Users are on the homepage
+        //Users are on the homepage
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         driver.get(" https://login2.nextbasecrm.com/");
-        String username = "hr68@cydeo.com";
-        String password = "UserUser";
-        CRM_Utilities.crm_login(driver, username, password);
-    }
-
-    @Test
-    public void crm_login_test() {
-        /*driver.get(" https://login2.nextbasecrm.com/");
-
         WebElement inputUsername = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[1]/input"));
         inputUsername.sendKeys("hr68@cydeo.com");
 
@@ -39,25 +32,61 @@ public class US10_CreateATask {
         inputPassword.sendKeys("UserUser");
 
         WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[2]/input"));
-         loginButton.click();
-         */
+        loginButton.click();
+    }
 
 
-//            Users click the TASK tab
-
+    //            Users click the TASK tab
+    @Test
+    public void test_create() {
         WebElement taskTab = driver.findElement(By.xpath("//span[@id='feed-add-post-form-tab-tasks']"));
         taskTab.click();
         Assert.assertTrue(taskTab.isDisplayed());
-    }
-    @Test
-    public void input_title(){
+
         WebElement inputTitle = driver.findElement(By.xpath("//input[@name='ACTION[0][ARGUMENTS][data][TITLE]']"));
         inputTitle.sendKeys("CYDEO");
+
+
+        driver.switchTo().frame(driver.findElement(By.xpath("//*[@id=\"bx-html-editor-iframe-cnt-lifefeed_task_form\"]/iframe")));
+        WebElement contentMessage = driver.findElement(By.cssSelector("body[style=\"min-height: 84px;\"]"));
+        contentMessage.sendKeys("Hello World");
+        driver.switchTo().parentFrame();
+        WebElement sendBtn = driver.findElement(By.xpath("//button[@id=\"blog-submit-button-save\"]"));
+        sendBtn.click();
+
+        WebElement verify = driver.findElement(By.xpath("//div[@id=\"sonet_log_day_item_KB7VoSvE\"]"));
+        verify.isDisplayed();
+
     }
 
+    @Test
+    public void errorMsg() {
+        WebElement taskTab = driver.findElement(By.xpath("//span[@id='feed-add-post-form-tab-tasks']"));
+        taskTab.click();
+        Assert.assertTrue(taskTab.isDisplayed());
 
+        WebElement inputTitle = driver.findElement(By.xpath("//input[@name='ACTION[0][ARGUMENTS][data][TITLE]']"));
+        inputTitle.sendKeys("");
 
+        WebElement sendBtn = driver.findElement(By.xpath("//button[@id=\"blog-submit-button-save\"]"));
+        sendBtn.click();
+
+        WebElement verify = driver.findElement(By.xpath("//div[@id=\"feed-add-post-content-tasks-container\"]"));
+        verify.isDisplayed();
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        driver.close();
+    }
 }
+
+
+
+
+
+
+
 //            Users write task title and task content/message
 //    Users click the SEND button
 //            Verify the task is displayed on the feed
