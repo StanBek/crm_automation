@@ -1,5 +1,7 @@
 package com.nextbasecrm.tests;
 
+import com.nextbasecrm.utilities.BrowserUtils;
+import com.nextbasecrm.utilities.ConfigurationReader;
 import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
@@ -12,17 +14,20 @@ public class US2_RememberMe_Checkbox {
     WebDriver driver;
 
     @BeforeMethod
-    public void setUp(){
-        driver = WebDriverFactory.getDriver("chrome");
+    public void setUp() {
+        driver = WebDriverFactory.getDriver(ConfigurationReader.getProperty("browser"));
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://login2.nextbasecrm.com/");
+        //  1-go to login page
+        driver.get(ConfigurationReader.getProperty("env"));
     }
 
     @AfterMethod
-    public void tearDown(){
+    public void tearDown() {
+        BrowserUtils.sleep(3);
         driver.close();
     }
+
 }
 
 //helpdesk67@cydeo.com
