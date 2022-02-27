@@ -1,6 +1,7 @@
 package com.nextbasecrm.tests;
 
 import com.nextbasecrm.utilities.BrowserUtils;
+import com.nextbasecrm.utilities.CRM_Utilities;
 import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,35 +15,34 @@ import java.util.concurrent.TimeUnit;
 public class US9_UsersFunctionalityModules {
     WebDriver driver;
 
-    //helpdesk67@cydeo.com
-    //helpdesk68@cydeo.com
-    //helpdesk69@cydeo.com
-
-    //hr67@cydeo.com
-    //hr68@cydeo.com
-    //hr69@cydeo.com
-
-    //marketing67@cydeo.com
-    //marketing68@cydeo.com
-    //marketing69@cydeo.com
-
-    String UserName = "helpdesk67@cydeo.com";
-    String Password = "UserUser";
-
     @BeforeMethod
     public void setUpMethod() {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://login2.nextbasecrm.com");
+        driver.get("https://login2.nextbasecrm.com/");
+        String UserName = "marketing67@cydeo.com";
+        String Password = "UserUser";
 
-        //The User can navigate between modules successfully (expected result equals to actual result)
-        WebElement LoginBox = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
-        LoginBox.sendKeys(UserName);
-        WebElement PasswordBox = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
-        PasswordBox.sendKeys(Password);
-        WebElement LoginButton = driver.findElement(By.xpath("//input[@type='submit']"));
-        LoginButton.click();
+/*
+        ArrayList<String> UserName = new ArrayList<String>();
+        UserName.add("helpdesk67@cydeo.com");
+        UserName.add("helpdesk68@cydeo.com");
+        UserName.add("helpdesk69@cydeo.com");
+        UserName.add("hr67@cydeo.com");
+        UserName.add("hr68@cydeo.com");
+        UserName.add("hr69@cydeo.com");
+        UserName.add("marketing67@cydeo.com");
+        UserName.add("marketing68@cydeo.com");
+        UserName.add("marketing69@cydeo.com");
+
+        for (String each : UserName) {
+
+        }
+
+ */
+        CRM_Utilities.crm_login(driver, UserName, Password);
+
     }
 
     @AfterMethod
