@@ -35,9 +35,7 @@ public class US9_UsersFunctionalityModules {
         UserName.add("marketing67@cydeo.com");
         UserName.add("marketing68@cydeo.com");
         UserName.add("marketing69@cydeo.com");
-
         for (String each : UserName) {
-
         }
 
  */
@@ -56,7 +54,7 @@ public class US9_UsersFunctionalityModules {
         //1.Activity module
         WebElement ActivityStream = driver.findElement(By.xpath("//a[@title='Activity Stream']"));
         ActivityStream.click();
-        BrowserUtils.verifyTitle(driver,"Portal");
+        BrowserUtils.verifyTitle(driver, "Portal");
 
     }
 
@@ -66,7 +64,7 @@ public class US9_UsersFunctionalityModules {
         //2.Tasks module
         WebElement TasksModule = driver.findElement(By.xpath("//a[@title='Tasks']"));
         TasksModule.click();
-        BrowserUtils.verifyTitle(driver,"Site map");
+        BrowserUtils.verifyTitle(driver, "Site map");
     }
 
     @Test
@@ -75,7 +73,7 @@ public class US9_UsersFunctionalityModules {
         //3.ChatAndCalls module
         WebElement ChatAndCalls = driver.findElement(By.xpath("//a[@title='Chat and Calls']"));
         ChatAndCalls.click();
-        BrowserUtils.verifyTitle(driver,"Chat and Calls");
+        BrowserUtils.verifyTitle(driver, "Chat and Calls");
     }
 
     @Test
@@ -84,7 +82,7 @@ public class US9_UsersFunctionalityModules {
         //4.Workgroups
         WebElement Workgroups = driver.findElement(By.xpath("//a[@title='Workgroups']"));
         Workgroups.click();
-        BrowserUtils.verifyTitle(driver,"Workgroups and projects");
+        BrowserUtils.verifyTitle(driver, "Workgroups and projects");
     }
 
     @Test
@@ -93,7 +91,7 @@ public class US9_UsersFunctionalityModules {
         //5.DriveModule
         WebElement DriveModule = driver.findElement(By.xpath("//a[@title='Drive']"));
         DriveModule.click();
-        BrowserUtils.verifyTitle(driver,"Site map");
+        BrowserUtils.verifyTitle(driver, "Site map");
     }
 
     @Test
@@ -102,7 +100,7 @@ public class US9_UsersFunctionalityModules {
         //6.CalendarModule
         WebElement CalendarModule = driver.findElement(By.xpath("//a[@title='Calendar']"));
         CalendarModule.click();
-        BrowserUtils.verifyTitle(driver,"Site map");
+        BrowserUtils.verifyTitle(driver, "Site map");
     }
 
     @Test
@@ -111,7 +109,7 @@ public class US9_UsersFunctionalityModules {
         //7.ContactCenterModule
         WebElement ContactCenterModule = driver.findElement(By.xpath("//a[@title='Contact Center']"));
         ContactCenterModule.click();
-        BrowserUtils.verifyTitle(driver,"Contact Center");
+        BrowserUtils.verifyTitle(driver, "Contact Center");
     }
 
     @Test
@@ -120,7 +118,7 @@ public class US9_UsersFunctionalityModules {
         //8.TimeAndReportsModule
         WebElement TimeAndReportsModule = driver.findElement(By.xpath("//a[@title='Time and Reports']"));
         TimeAndReportsModule.click();
-        BrowserUtils.verifyTitle(driver,"Absence Chart");
+        BrowserUtils.verifyTitle(driver, "Absence Chart");
     }
 
     @Test
@@ -129,7 +127,7 @@ public class US9_UsersFunctionalityModules {
         //9.EmployeesModule
         WebElement EmployeesModule = driver.findElement(By.xpath("//a[@title='Employees']"));
         EmployeesModule.click();
-        BrowserUtils.verifyTitle(driver,"Company Structure");
+        BrowserUtils.verifyTitle(driver, "Company Structure");
     }
 
     @Test
@@ -138,7 +136,7 @@ public class US9_UsersFunctionalityModules {
         //10.ServicesModule
         WebElement ServicesModule = driver.findElement(By.xpath("//a[@title='Services']"));
         ServicesModule.click();
-        BrowserUtils.verifyTitle(driver,"Meeting Rooms");
+        BrowserUtils.verifyTitle(driver, "Meeting Rooms");
     }
 
     @Test
@@ -147,7 +145,7 @@ public class US9_UsersFunctionalityModules {
         //11.CompanyModule
         WebElement CompanyModule = driver.findElement(By.xpath("//a[@title='Company']"));
         CompanyModule.click();
-        BrowserUtils.verifyTitle(driver,"Company");
+        BrowserUtils.verifyTitle(driver, "Company");
     }
 
 }
