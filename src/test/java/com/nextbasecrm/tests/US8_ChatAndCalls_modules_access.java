@@ -180,6 +180,7 @@ public class US8_ChatAndCalls_modules_access {
         Assert.assertTrue(activityStreamModule.isDisplayed());
 
 
+
     }
 
     @Test
@@ -199,7 +200,6 @@ public class US8_ChatAndCalls_modules_access {
         Assert.assertTrue(notificationModule.isDisplayed());
         Assert.assertTrue(settingModule.isDisplayed());
         Assert.assertTrue(activityStreamModule.isDisplayed());
-
 
     }
 
