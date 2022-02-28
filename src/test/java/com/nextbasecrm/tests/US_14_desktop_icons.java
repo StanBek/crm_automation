@@ -1,10 +1,12 @@
 package com.nextbasecrm.tests;
 
+import com.nextbasecrm.utilities.CRM_Utilities;
 import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -12,6 +14,8 @@ import java.util.concurrent.TimeUnit;
 
 public class US_14_desktop_icons {
     public WebDriver driver;
+    String userName = "helpdesk67@cybertekschool.com";
+    String password = "UserUser";
 
 
     @BeforeMethod
@@ -19,22 +23,17 @@ public class US_14_desktop_icons {
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get("https://login2.nextbasecrm.com");
+        CRM_Utilities.crm_login(driver,userName,password);
 
+    }
+    @AfterMethod
+    public void tearMethod(){
+        driver.close();
     }
 
     @Test
-    public void cram_desktop_icons() throws InterruptedException {
-        driver.get("https://login2.nextbasecrm.com");
-
-        WebElement inputUserName = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
-        inputUserName.sendKeys("helpdesk65@cybertekschool.com");
-
-        WebElement inputPassword = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
-        inputPassword.sendKeys("UserUser");
-
-
-        WebElement loginBtn = driver.findElement(By.xpath("//input[@value='Log In']"));
-        loginBtn.click();
+    public void crm_desktop_icons() throws InterruptedException {
 
         WebElement desktopIcon =driver.findElement(By.xpath("(//div[@class='b24-app-block b24-app-desktop']/div)[1]"));
 
