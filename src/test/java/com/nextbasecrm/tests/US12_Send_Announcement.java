@@ -1,9 +1,8 @@
 package com.nextbasecrm.tests;
 
-import com.nextbasecrm.utilities.BrowserUtils;
+
 import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -11,62 +10,66 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.lang.module.Configuration;
+
 import java.util.concurrent.TimeUnit;
 
 public class US12_Send_Announcement {
 
-     WebDriver driver;
-
+     public WebDriver driver;
 
      @BeforeMethod
-     public void setUp() {
-          driver = WebDriverFactory.getDriver(ConfigurationReader.getProperty("browser"));
+     public void setupMethod() {
+          //Users are on the homepage
+
+          driver = WebDriverFactory.getDriver("chrome");
           driver.manage().window().maximize();
           driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-          //  1-go to login page
-          driver.get(ConfigurationReader.getProperty("env"));
+
+          driver.get(" https://login2.nextbasecrm.com/");
+          WebElement inputUsername = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[1]/input"));
+          inputUsername.sendKeys("hr68@cydeo.com");
+
+          WebElement inputPassword = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[2]/input"));
+          inputPassword.sendKeys("UserUser");
+
+          WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[2]/input"));
+          loginButton.click();
      }
+
+     @Test
+     public void send_announcement() {
+
+
+          //Click more tab
+          WebElement moreTab = driver.findElement(By.xpath("//span[@id=\"feed-add-post-form-link-text\"]"));
+          moreTab.click();
+          Assert.assertTrue(moreTab.isDisplayed());
+          WebElement Announcement_tab = driver.findElement(By.xpath("//div//span[3]/span[.='Announcement']"));
+          Announcement_tab.click();
+          driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
+          WebElement white_box = driver.findElement(By.cssSelector("body[contenteditable='true']"));
+          white_box.sendKeys("Today was a productive day");
+          driver.switchTo().parentFrame();
+          WebElement sendBtn = driver.findElement(By.xpath("//button[@id=\"blog-submit-button-save\"]"));
+          sendBtn.click();
+     }
+
+     @Test
+     public void error_msg() {
+          WebElement moreTab = driver.findElement(By.xpath("//span[@id=\"feed-add-post-form-link-text\"]"));
+          moreTab.click();
+          Assert.assertTrue(moreTab.isDisplayed());
+          WebElement Announcement_tab = driver.findElement(By.xpath("//div//span[3]/span[.='Announcement']"));
+          Announcement_tab.click();
+          WebElement sendBtn = driver.findElement(By.xpath("//button[@id=\"blog-submit-button-save\"]"));
+          sendBtn.click();
+          WebElement verify = driver.findElement(By.xpath("//span[.='The message title is not specified']"));
+          verify.isDisplayed();
+     }
+
 
      @AfterMethod
      public void tearDown() {
-          BrowserUtils.sleep(3);
           driver.close();
      }
-
-     @Test
-     public void login_with_valid_credentials_with_login_btn() {
-          // 2-write username
-          WebElement userName = driver.findElement(By.xpath("(//input[@class='login-inp'])[1]"));
-          userName.sendKeys(ConfigurationReader.getProperty("username"));
-          //     * 3-write password
-          WebElement password = driver.findElement(By.xpath("(//input[@class='login-inp'])[2]"));
-          password.sendKeys(ConfigurationReader.getProperty("password"));
-          //     * 4-click login button
-          WebElement loginBtn = driver.findElement(By.xpath("//input[@type='submit']"));
-          BrowserUtils.sleep(3);
-          loginBtn.click();
-          // 5 verify title
-          String expectedTitle="Portal";
-          String actualTitle=driver.getTitle();
-          Assert.assertEquals(actualTitle, expectedTitle);
-     }
-     @Test
-     public void login_with_valid_credentials_with_enter_btn() {
-          // 2-write username
-          WebElement userName = driver.findElement(By.xpath("(//input[@class='login-inp'])[1]"));
-          userName.sendKeys(ConfigurationReader.getProperty("username"));
-          //     * 3-write password
-          WebElement password = driver.findElement(By.xpath("(//input[@class='login-inp'])[2]"));
-          password.sendKeys(ConfigurationReader.getProperty("password")+ Keys.ENTER);
-          //     * 4-click login button
-          // 5 verify title
-          String expectedTitle="Portal";
-          String actualTitle=driver.getTitle();
-          Assert.assertEquals(actualTitle, expectedTitle);
-     }
-
-
-
-
 }
