@@ -1,4 +1,4 @@
-package com.nextbasecrm.tests.utilities;
+package com.nextbasecrm.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -16,7 +16,6 @@ public class WebDriverFactory {
             return new FirefoxDriver();
         } else {
             return null;
-
 
         }
     }
