@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class US_14_desktop_icons {
+public class us_14_desktop_icons {
     public WebDriver driver;
     String userName;
     String password;
@@ -34,7 +34,7 @@ public class US_14_desktop_icons {
     }
 
     @Test
-    public void crm_desktop_icons_helpDesk() throws InterruptedException {
+    public void crm_desktop_icons_helpDesk_test()  {
         userName = "helpdesk67@cydeo.com";
         password = "UserUser";
         CRM_Utilities.crm_login(driver, userName, password);
@@ -69,7 +69,7 @@ public class US_14_desktop_icons {
     }
 
     @Test
-    public void crm_desktop_icons_marketing() throws InterruptedException {
+    public void crm_desktop_icons_marketing()  {
         userName = "hr67@cydeo.com";
         password = "UserUser";
         CRM_Utilities.crm_login(driver, userName, password);
@@ -104,7 +104,7 @@ public class US_14_desktop_icons {
     }
 
     @Test
-    public void crm_desktop_icons_hr() throws InterruptedException {
+    public void crm_desktop_icons_hr()  {
         userName = "marketing67@cydeo.com";
         password = "UserUser";
         CRM_Utilities.crm_login(driver, userName, password);
