@@ -45,7 +45,9 @@ public class US9_UsersFunctionalityModules {
     }
     //The User can navigate between modules successfully (expected result equals to actual result)
     @Test
-    public void test_HrUserNavigationToActivityModule() {
+
+    public void test_UserNavigationToActivityModule() {
+        CRM_Utilities.crm_login(driver,UserName,Password);
 
         //1.Activity module
         WebElement ActivityStream = driver.findElement(By.xpath("//a[@title='Activity Stream']"));
@@ -55,7 +57,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_HrUserNavigationToTaskModule() {
+    public void test_UserNavigationToTaskModule() {
 
         //2.Tasks module
         WebElement TasksModule = driver.findElement(By.xpath("//a[@title='Tasks']"));
@@ -64,7 +66,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_HrUserNavigationToChatAndCallsModule() {
+    public void test_UserNavigationToChatAndCallsModule() {
 
         //3.ChatAndCalls module
         WebElement ChatAndCalls = driver.findElement(By.xpath("//a[@title='Chat and Calls']"));
@@ -73,7 +75,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_HrUserNavigationToWorkgroupsModule() {
+    public void test_UserNavigationToWorkgroupsModule() {
 
         //4.Workgroups
         WebElement Workgroups = driver.findElement(By.xpath("//a[@title='Workgroups']"));
@@ -82,7 +84,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_HrUserNavigationToDriveModule() {
+    public void test_UserNavigationToDriveModule() {
 
         //5.DriveModule
         WebElement DriveModule = driver.findElement(By.xpath("//a[@title='Drive']"));
@@ -91,7 +93,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_HrUserNavigationToCalendarModule() {
+    public void test_UserNavigationToCalendarModule() {
 
         //6.CalendarModule
         WebElement CalendarModule = driver.findElement(By.xpath("//a[@title='Calendar']"));
@@ -100,7 +102,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_HrUserNavigationToContactCenterModule() {
+    public void test_UserNavigationToContactCenterModule() {
 
         //7.ContactCenterModule
         WebElement ContactCenterModule = driver.findElement(By.xpath("//a[@title='Contact Center']"));
@@ -109,7 +111,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_HrUserNavigationToTimeAndReportsModule() {
+    public void test_UserNavigationToTimeAndReportsModule() {
 
         //8.TimeAndReportsModule
         WebElement TimeAndReportsModule = driver.findElement(By.xpath("//a[@title='Time and Reports']"));
@@ -118,7 +120,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_HrUserNavigationToEmployeesModule() {
+    public void test_UserNavigationToEmployeesModule() {
 
         //9.EmployeesModule
         WebElement EmployeesModule = driver.findElement(By.xpath("//a[@title='Employees']"));
@@ -127,7 +129,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_HrUserNavigationToServicesModule() {
+    public void test_UserNavigationToServicesModule() {
 
         //10.ServicesModule
         WebElement ServicesModule = driver.findElement(By.xpath("//a[@title='Services']"));
@@ -136,7 +138,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_HrUserNavigationToCompanyModule() {
+    public void test_UserNavigationToCompanyModule() {
 
         //11.CompanyModule
         WebElement CompanyModule = driver.findElement(By.xpath("//a[@title='Company']"));
