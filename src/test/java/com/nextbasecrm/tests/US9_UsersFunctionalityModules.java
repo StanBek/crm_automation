@@ -36,7 +36,7 @@ public class US9_UsersFunctionalityModules {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://login2.nextbasecrm.com");
-        //CRM_Utilities.crm_login(driver,UserName,Password);
+        CRM_Utilities.crm_login(driver,UserName,Password);
     }
 
     @AfterMethod
