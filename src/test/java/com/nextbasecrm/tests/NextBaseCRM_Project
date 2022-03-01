@@ -1,0 +1,313 @@
+NextBaseCRM Project User Stories & Test cases
+Story 1:
+As a user, I should be able to log in to the NextBaseCRM.
+AC:
+1. The login page title should be “Authorization.”
+2. The user should go to the homepage after login in successfully.
+3. “Incorrect username or password” should be displayed when a user enters the wrong username or password.
+
+Test cases #1
+Description:  Successful login
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users go to the login page
+            Verify the title is “Authorization”
+            Enter valid emails and passwords
+            Click the Login In button
+            Verify users log in successfully and launch the homepage
+
+Test cases #2
+Description:  User login with invalid credentials
+Environment:  https://login2.nextbasecrm.com/
+Steps::  Users go to the login page
+             Enter invalid email or password
+             Click the Login In button
+             Verify users see “Incorrect username or password” on the page
+
+==============================================================================================
+==============================================================================================
+
+Story 2:
+As a user, I should be able to save my user credential on a computer.
+AC:
+1. There should be a Checkbox label displayed to enable users to save their user credentials on computers.
+2. “Remember me on this computer” should be displayed on the right side of the checkbox label.
+
+Test cases #1
+Description:  check the “Remember me” checkbox
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users go to the login page
+            Verify user can check the remember me checkbox
+            Verify there is a “Remember me on this computer” message displayed
+
+
+==============================================================================================
+==============================================================================================
+
+Story 3:
+As a user, I should log out from the NextBaseCRM app.
+AC:
+1. The “Log out” option should be displayed when the user clicks the user profile from the homepage.
+2. After clicking the logout button, the user should navigate back to the login page.
+
+Test cases #1
+Description:  Users log out from the app
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users are on the homepage
+            Users click the user profile name
+            Users select the “Log Out” option
+            Verify the user back to the login page
+
+
+==============================================================================================
+==============================================================================================
+
+Story 4:
+As a user, I want to see all the options under the user profile.
+AC:
+1. Five options should be displayed under the user profile:
+My Profile
+Edit Profile Settings
+Themes
+Configure notifications
+Logout
+
+Test cases #1
+Description:  Users view all options under the profile
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users are on the homepage
+            Users click the user profile name
+            Verify the users see 5 options:
+        		My Profile
+Edit Profile Settings
+Themes
+Configure notifications
+Logout
+
+==============================================================================================
+==============================================================================================
+
+Story 5:
+As a user, I should be able to send simple text messages using the message tab.
+AC:
+1. When users click the MASSAGE tab, they should be able to write the message body and send a message successfully to the feed.
+2. “The message title is not specified”. Should be displayed when users send a message without content.
+
+Test cases #1
+Description:  Users send text messages successfully
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users are on the homepage
+            Users click the MESSAGE tab
+            Users write test message
+    Users click the SEND button
+           Verify the message is displayed on the feed
+
+Test cases #2
+Description:  Users see the warning message for the empty message body
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users are on the homepage
+            Users click the MESSAGE tab
+    Users click the SEND button
+           Verify “The message title is not specified” warning message is displayed on the page
+
+==============================================================================================
+==============================================================================================
+
+
+Story 6:
+As a user, I want to see all the options under the MORE tab on the homepage.
+AC:
+1. Four options should be displayed under the MORE tab:
+File
+Appreciation
+Announcement
+Workflow
+
+Test cases #1
+Description:  Users view all options under the MORE tab
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users are on the homepage
+            Users click the MORE tab
+            Verify the users see 4 options:
+			File
+Appreciation
+Announcement
+Workflow
+
+==============================================================================================
+==============================================================================================
+
+Story 7:
+As a user, I want to vote for a poll with one answer.
+AC:
+1. Users can select one answer and click the “VOTE” button to vote for a poll.
+
+Test cases #1
+Description:  Users vote polls successfully
+Environment:  https://login2.nextbasecrm.com/
+Pre-Condition: There should be at least one poll is listed on the feed
+Steps: Users are on the homepage
+           Users click one answer for a poll
+           Users click the VOTE button
+            Verify one option is selected / user voted
+
+==============================================================================================
+==============================================================================================
+
+Story 8:
+As a user, I want to access the Chat and Calls module.
+AC:
+1. There should be four sub-modules once the user clicks the Chat and Calls module:
+Message
+Notifications
+Settings
+Active Stream
+
+Test cases #1
+Description:  Users view all options in the Chat and Calls module
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users are on the homepage
+            Users click the CHAT and Calls module
+            Verify the users see 4 options:
+Message
+Notifications
+Settings
+Active Stream
+
+==============================================================================================
+==============================================================================================
+
+
+Story 9:
+As a user, I want to access the correct modules.
+AC:
+1. Users should access the right page when they click on any module.
+
+Test cases #1
+Description:  Users access to correct modules
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users are on the homepage
+            Users click a module
+            Verify users see the correct title for the module
+
+Expected modules      |     Expected titles
+
+==============================================================================================
+==============================================================================================
+
+
+Story 10:
+As a user, I want to create a task with just task content from the TASK tab.
+AC:
+1. Once a task is created successfully, there should be a confirmation message dimply in a popup.  “Task has been created”
+2. “The task name is not specified.” The message should display when the user did not write the task title.
+Test cases #1
+Description:  Users create tasks successfully
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users are on the homepage
+            Users click the TASK tab
+            Users write task title and task content/message
+    Users click the SEND button
+            Verify the task is displayed on the feed
+
+Test cases #2
+Description:  Users see the warning message for the empty task
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users are on the homepage
+            Users click the TASK tab
+    Users click the SEND button
+           Verify “The message title is not specified” warning message is displayed on the page
+
+==============================================================================================
+==============================================================================================
+
+Story 11:
+As a user, I want to access my profile page.
+AC:
+1. The “My Profile” option should be displayed when the user clicks the user profile from the homepage.
+2. There should be five tabs on my profile page:
+     “General     “Drive”      “Tasks”       “Calendar ”        “conversations”
+
+Test cases #1
+Description:  Users view all options on my profile page
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users are on the homepage
+            Users click the user profile
+	    Users select the My Profile option
+            Verify the users see 4 options:
+	 	General
+            	Drive
+Tasks
+Calendar
+conversations”
+
+==============================================================================================
+==============================================================================================
+
+
+Story 12:
+As a user, I should be able to Make Announcements using the Announcements tab.
+AC:
+1. Users should be able to write messages in and send announcements by clicking the SEND button.
+2. When users attempt to make announcements without a message, there should be a working message “The message title is not specified”.
+
+Test cases #1
+Description:  Users make Announcements successfully
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users are on the homepage
+            Users click MORE tab and select ANNOUNCEMENTS
+            Users write announcements message
+    Users click the SEND button
+           Verify the announcements is displayed on the feed
+Test cases #2
+Description:  Users create announcements without content
+Environment:  https://login2.nextbasecrm.com/
+Steps::Users are on the homepage
+            Users click MORE tab and select ANNOUNCEMENT
+    Users click the SEND button
+           Verify “The message title is not specified” warning message is displayed on the page
+
+==============================================================================================
+==============================================================================================
+
+Story 13:
+As a user, I should be able to Make Appreciation using the Appreciation tab.
+AC:
+1. Users should be able to write messages in and send Appreciation by clicking the SEND button.
+2. When users attempt to make appreciation without a message, there should be a working message “The message title is not specified”.
+
+Test cases #1
+Description:  Users make Appreciation successfully
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users are on the homepage
+            Users click MORE tab and select APPRECIATION
+            Users write an Appreciation message
+    Users click the SEND button
+           Verify the Appreciation is displayed on the feed
+Test cases #2
+Description:  Users create Appreciation without content
+Environment:  https://login2.nextbasecrm.com/
+Steps::Users are on the homepage
+            Users click MORE tab and select APPRECIATION
+    Users click the SEND button
+           Verify “The message title is not specified” warning message is displayed on the page
+
+==============================================================================================
+==============================================================================================
+
+Story 14:
+As a user, I should be able to see 3 desktop options on the homepage.
+
+AC:
+1. There should be 3 options for the desktop version:
+   - MAC OS
+   - WINDOWS
+   - LINUX
+
+Test cases #1
+Description:  Users see 3 desktop options
+Environment:  https://login2.nextbasecrm.com/
+Steps:: Users are on the homepage
+           Verify the users see 3 desktop options:
+		  - MAC OS
+ 	 	 - WINDOWS
+  	 	- LINUX
