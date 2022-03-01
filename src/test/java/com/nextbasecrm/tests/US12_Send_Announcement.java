@@ -15,7 +15,17 @@ import java.util.concurrent.TimeUnit;
 
 public class US12_Send_Announcement {
 
-     public WebDriver driver;
+     WebDriver driver;
+     WebElement username;
+     WebElement password;
+     WebElement loginButton;
+     WebElement sendBtn;
+     WebElement verify;
+     WebElement moreTab;
+     WebElement Announcement_tab;
+     WebElement white_box;
+
+
 
      @BeforeMethod
      public void setupMethod() {
@@ -26,46 +36,158 @@ public class US12_Send_Announcement {
           driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
           driver.get(" https://login2.nextbasecrm.com/");
-          WebElement inputUsername = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[1]/input"));
-          inputUsername.sendKeys("hr68@cydeo.com");
 
-          WebElement inputPassword = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[2]/input"));
-          inputPassword.sendKeys("UserUser");
-
-          WebElement loginButton = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[2]/input"));
-          loginButton.click();
      }
 
      @Test
-     public void send_announcement() {
+     public void send_announcement_as_user_hr67() {
 
 
           //Click more tab
-          WebElement moreTab = driver.findElement(By.xpath("//span[@id=\"feed-add-post-form-link-text\"]"));
+          username = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[1]/input"));
+          username.sendKeys("hr67@cydeo.com");
+
+          password = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[2]/input"));
+          password.sendKeys("UserUser");
+
+          loginButton = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[2]/input"));
+          loginButton.click();
+
+          moreTab = driver.findElement(By.xpath("//span[@id=\"feed-add-post-form-link-text\"]"));
           moreTab.click();
           Assert.assertTrue(moreTab.isDisplayed());
-          WebElement Announcement_tab = driver.findElement(By.xpath("//div//span[3]/span[.='Announcement']"));
+          Announcement_tab = driver.findElement(By.xpath("//div//span[3]/span[.='Announcement']"));
           Announcement_tab.click();
           driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
-          WebElement white_box = driver.findElement(By.cssSelector("body[contenteditable='true']"));
+          white_box = driver.findElement(By.cssSelector("body[contenteditable='true']"));
           white_box.sendKeys("Today was a productive day");
           driver.switchTo().parentFrame();
-          WebElement sendBtn = driver.findElement(By.xpath("//button[@id=\"blog-submit-button-save\"]"));
+          sendBtn = driver.findElement(By.xpath("//button[@id=\"blog-submit-button-save\"]"));
           sendBtn.click();
      }
 
+
      @Test
-     public void error_msg() {
-          WebElement moreTab = driver.findElement(By.xpath("//span[@id=\"feed-add-post-form-link-text\"]"));
+     public void error_msg_as_user_hr67() {
+          username = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[1]/input"));
+          username.sendKeys("hr67@cydeo.com");
+
+          password = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[2]/input"));
+          password.sendKeys("UserUser");
+
+          loginButton = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[2]/input"));
+          loginButton.click();
+
+          moreTab = driver.findElement(By.xpath("//span[@id=\"feed-add-post-form-link-text\"]"));
           moreTab.click();
           Assert.assertTrue(moreTab.isDisplayed());
-          WebElement Announcement_tab = driver.findElement(By.xpath("//div//span[3]/span[.='Announcement']"));
+          Announcement_tab = driver.findElement(By.xpath("//div//span[3]/span[.='Announcement']"));
           Announcement_tab.click();
-          WebElement sendBtn = driver.findElement(By.xpath("//button[@id=\"blog-submit-button-save\"]"));
+          sendBtn = driver.findElement(By.xpath("//button[@id=\"blog-submit-button-save\"]"));
           sendBtn.click();
-          WebElement verify = driver.findElement(By.xpath("//span[.='The message title is not specified']"));
+          verify = driver.findElement(By.xpath("//span[.='The message title is not specified']"));
           verify.isDisplayed();
      }
+
+     @Test
+     public void send_announcement_as_user_hr68() {
+
+
+          //Click more tab
+          username = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[1]/input"));
+          username.sendKeys("hr68@cydeo.com");
+
+          password = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[2]/input"));
+          password.sendKeys("UserUser");
+
+          loginButton = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[2]/input"));
+          loginButton.click();
+
+          moreTab = driver.findElement(By.xpath("//span[@id=\"feed-add-post-form-link-text\"]"));
+          moreTab.click();
+          Assert.assertTrue(moreTab.isDisplayed());
+          Announcement_tab = driver.findElement(By.xpath("//div//span[3]/span[.='Announcement']"));
+          Announcement_tab.click();
+          driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
+          white_box = driver.findElement(By.cssSelector("body[contenteditable='true']"));
+          white_box.sendKeys("Today was a productive day");
+          driver.switchTo().parentFrame();
+          sendBtn = driver.findElement(By.xpath("//button[@id=\"blog-submit-button-save\"]"));
+          sendBtn.click();
+     }
+
+
+     @Test
+     public void error_msg_as_user_hr68() {
+          username = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[1]/input"));
+          username.sendKeys("hr68@cydeo.com");
+
+          password = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[2]/input"));
+          password.sendKeys("UserUser");
+
+          loginButton = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[2]/input"));
+          loginButton.click();
+
+          moreTab = driver.findElement(By.xpath("//span[@id=\"feed-add-post-form-link-text\"]"));
+          moreTab.click();
+          Assert.assertTrue(moreTab.isDisplayed());
+          Announcement_tab = driver.findElement(By.xpath("//div//span[3]/span[.='Announcement']"));
+          Announcement_tab.click();
+          sendBtn = driver.findElement(By.xpath("//button[@id=\"blog-submit-button-save\"]"));
+          sendBtn.click();
+          verify = driver.findElement(By.xpath("//span[.='The message title is not specified']"));
+          verify.isDisplayed();
+     }
+     @Test
+     public void send_announcement_as_user_hr69() {
+
+
+          //Click more tab
+          username = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[1]/input"));
+          username.sendKeys("hr69@cydeo.com");
+
+          password = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[2]/input"));
+          password.sendKeys("UserUser");
+
+          loginButton = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[2]/input"));
+          loginButton.click();
+
+          moreTab = driver.findElement(By.xpath("//span[@id=\"feed-add-post-form-link-text\"]"));
+          moreTab.click();
+          Assert.assertTrue(moreTab.isDisplayed());
+          Announcement_tab = driver.findElement(By.xpath("//div//span[3]/span[.='Announcement']"));
+          Announcement_tab.click();
+          driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@class='bx-editor-iframe']")));
+          white_box = driver.findElement(By.cssSelector("body[contenteditable='true']"));
+          white_box.sendKeys("Today was a productive day");
+          driver.switchTo().parentFrame();
+          sendBtn = driver.findElement(By.xpath("//button[@id=\"blog-submit-button-save\"]"));
+          sendBtn.click();
+     }
+
+
+     @Test
+     public void error_msg_as_user_hr69() {
+          username = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[1]/input"));
+          username.sendKeys("hr69@cydeo.com");
+
+          password = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[1]/div[2]/input"));
+          password.sendKeys("UserUser");
+
+          loginButton = driver.findElement(By.xpath("//*[@id=\"login-popup\"]/form/div[2]/input"));
+          loginButton.click();
+
+          moreTab = driver.findElement(By.xpath("//span[@id=\"feed-add-post-form-link-text\"]"));
+          moreTab.click();
+          Assert.assertTrue(moreTab.isDisplayed());
+          Announcement_tab = driver.findElement(By.xpath("//div//span[3]/span[.='Announcement']"));
+          Announcement_tab.click();
+          sendBtn = driver.findElement(By.xpath("//button[@id=\"blog-submit-button-save\"]"));
+          sendBtn.click();
+          verify = driver.findElement(By.xpath("//span[.='The message title is not specified']"));
+          verify.isDisplayed();
+     }
+
 
 
      @AfterMethod
