@@ -1,4 +1,4 @@
-package com.nextbasecrm.tests.utilities;
+package com.nextbasecrm.utilities;
 
 /*
 In this class only general utility methods that are not related to some specific page.

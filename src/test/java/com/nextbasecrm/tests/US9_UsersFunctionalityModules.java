@@ -1,8 +1,8 @@
 package com.nextbasecrm.tests;
 
-import com.nextbasecrm.tests.utilities.BrowserUtils;
-import com.nextbasecrm.tests.utilities.CRM_Utilities;
-import com.nextbasecrm.tests.utilities.WebDriverFactory;
+import com.nextbasecrm.utilities.BrowserUtils;
+import com.nextbasecrm.utilities.CRM_Utilities;
+import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
