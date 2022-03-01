@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class us_14_desktop_icons {
+public class US_14_Desktop_Icons {
     public WebDriver driver;
     String userName;
     String password;
