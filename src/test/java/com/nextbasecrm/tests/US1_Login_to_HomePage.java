@@ -28,10 +28,13 @@ public class US1_Login_to_HomePage {
      driver.get("https://login2.nextbasecrm.com/");
     }
 
+
     @AfterMethod
     public void tearDown(){
         driver.close();
     }
+
+
 
 
     @Test
