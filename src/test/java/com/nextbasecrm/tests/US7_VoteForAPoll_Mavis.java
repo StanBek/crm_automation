@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class US7_VoteForAPoll {
+public class US7_VoteForAPoll_Mavis {
     WebDriver driver;
 
     String UserName = "helpdesk67@cydeo.com";
