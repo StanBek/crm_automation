@@ -1,6 +1,7 @@
 package com.nextbasecrm.tests;
 
-import com.nextbasecrm.tests.utilities.CRM_Utilities;
+
+import com.nextbasecrm.utilities.CRM_Utilities;
 import com.nextbasecrm.utilities.Utilities_For_Login;
 import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
