@@ -33,12 +33,12 @@ public class US1_LoginToHomePage_NewVersion {
     @Test(priority = 2)
     public void incorrectUsername() {
 
-        for (String s : wrongUsername) {
+        for (String username : wrongUsername) {
             driver = WebDriverFactory.getDriver("chrome");
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.get("https://login2.nextbasecrm.com/");
-            CRM_Utilities.crm_login(driver, s, password);
+            CRM_Utilities.crm_login(driver, username, password);
             actual_incorrectLoginOrPassword = driver.findElement(By.xpath("//div[.='Incorrect login or password']")).getText();
             Assert.assertEquals(actual_incorrectLoginOrPassword,expected_incorrectLoginOrPassword,"Failed");
             driver.close();
@@ -46,12 +46,12 @@ public class US1_LoginToHomePage_NewVersion {
     }
     @Test(priority = 3)
     public void incorrectPassword() {
-        for (String s : userList) {
+        for (String username : userList) {
             driver = WebDriverFactory.getDriver("chrome");
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
             driver.get("https://login2.nextbasecrm.com/");
-            CRM_Utilities.crm_login(driver, s, wrongPassword);
+            CRM_Utilities.crm_login(driver, username, wrongPassword);
             actual_incorrectLoginOrPassword = driver.findElement(By.xpath("//div[.='Incorrect login or password']")).getText();
             Assert.assertEquals(actual_incorrectLoginOrPassword, expected_incorrectLoginOrPassword, "Failed");
             driver.close();
