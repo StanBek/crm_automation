@@ -22,7 +22,7 @@ public class US1_LoginToHomePage_NewVersion {
     @Test(priority = 1)
     public void loginSetUp() {
 
-        for (String username : Utilities_For_Login.userList) {
+        for (String username : userList) {
             driver = WebDriverFactory.getDriver("chrome");
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
