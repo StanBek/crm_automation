@@ -36,6 +36,8 @@ public class US9_UsersFunctionalityModules {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://login2.nextbasecrm.com");
+
+        //The User can navigate between modules successfully (expected result equals to actual result)
         CRM_Utilities.crm_login(driver,UserName,Password);
     }
 
@@ -43,11 +45,9 @@ public class US9_UsersFunctionalityModules {
     public void tearDown() {
         driver.quit();
     }
-    //The User can navigate between modules successfully (expected result equals to actual result)
-    @Test
 
-    public void test_UserNavigationToActivityModule() {
-        CRM_Utilities.crm_login(driver,UserName,Password);
+    @Test
+    public void test_HrUserNavigationToActivityModule() {
 
         //1.Activity module
         WebElement ActivityStream = driver.findElement(By.xpath("//a[@title='Activity Stream']"));
@@ -57,7 +57,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_UserNavigationToTaskModule() {
+    public void test_HrUserNavigationToTaskModule() {
 
         //2.Tasks module
         WebElement TasksModule = driver.findElement(By.xpath("//a[@title='Tasks']"));
@@ -66,7 +66,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_UserNavigationToChatAndCallsModule() {
+    public void test_HrUserNavigationToChatAndCallsModule() {
 
         //3.ChatAndCalls module
         WebElement ChatAndCalls = driver.findElement(By.xpath("//a[@title='Chat and Calls']"));
@@ -75,7 +75,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_UserNavigationToWorkgroupsModule() {
+    public void test_HrUserNavigationToWorkgroupsModule() {
 
         //4.Workgroups
         WebElement Workgroups = driver.findElement(By.xpath("//a[@title='Workgroups']"));
@@ -84,7 +84,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_UserNavigationToDriveModule() {
+    public void test_HrUserNavigationToDriveModule() {
 
         //5.DriveModule
         WebElement DriveModule = driver.findElement(By.xpath("//a[@title='Drive']"));
@@ -93,7 +93,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_UserNavigationToCalendarModule() {
+    public void test_HrUserNavigationToCalendarModule() {
 
         //6.CalendarModule
         WebElement CalendarModule = driver.findElement(By.xpath("//a[@title='Calendar']"));
@@ -102,7 +102,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_UserNavigationToContactCenterModule() {
+    public void test_HrUserNavigationToContactCenterModule() {
 
         //7.ContactCenterModule
         WebElement ContactCenterModule = driver.findElement(By.xpath("//a[@title='Contact Center']"));
@@ -111,7 +111,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_UserNavigationToTimeAndReportsModule() {
+    public void test_HrUserNavigationToTimeAndReportsModule() {
 
         //8.TimeAndReportsModule
         WebElement TimeAndReportsModule = driver.findElement(By.xpath("//a[@title='Time and Reports']"));
@@ -120,7 +120,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_UserNavigationToEmployeesModule() {
+    public void test_HrUserNavigationToEmployeesModule() {
 
         //9.EmployeesModule
         WebElement EmployeesModule = driver.findElement(By.xpath("//a[@title='Employees']"));
@@ -129,7 +129,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_UserNavigationToServicesModule() {
+    public void test_HrUserNavigationToServicesModule() {
 
         //10.ServicesModule
         WebElement ServicesModule = driver.findElement(By.xpath("//a[@title='Services']"));
@@ -138,7 +138,7 @@ public class US9_UsersFunctionalityModules {
     }
 
     @Test
-    public void test_UserNavigationToCompanyModule() {
+    public void test_HrUserNavigationToCompanyModule() {
 
         //11.CompanyModule
         WebElement CompanyModule = driver.findElement(By.xpath("//a[@title='Company']"));

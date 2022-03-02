@@ -1,4 +1,4 @@
-package com.nextbasecrm.tests.utilities;
+package com.nextbasecrm.utilities;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
