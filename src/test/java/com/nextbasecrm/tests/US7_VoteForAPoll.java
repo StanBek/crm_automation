@@ -33,7 +33,7 @@ public class US7_VoteForAPoll {
     }
 
     @Test
-    public void US7_VoteforPollTest() throws InterruptedException {
+    public void US7_VoteForPollTest() throws InterruptedException {
 
         driver.findElement(By.xpath("//input[@name='USER_LOGIN']")).sendKeys(UserName);
         Thread.sleep(3000);
