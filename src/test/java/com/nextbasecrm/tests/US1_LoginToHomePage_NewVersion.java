@@ -1,6 +1,7 @@
 package com.nextbasecrm.tests;
 
-import com.nextbasecrm.tests.utilities.CRM_Utilities;
+
+import com.nextbasecrm.utilities.CRM_Utilities;
 import com.nextbasecrm.utilities.Utilities_For_Login;
 import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
@@ -21,7 +22,7 @@ public class US1_LoginToHomePage_NewVersion {
     @Test(priority = 1)
     public void loginSetUp() {
 
-        for (String s : Utilities_For_Login.userList) {
+        for (String username : userList) {
             driver = WebDriverFactory.getDriver("chrome");
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -29,7 +30,7 @@ public class US1_LoginToHomePage_NewVersion {
             String actualVerify_Authorization = driver.findElement(By.xpath("//div[text()='Authorization']")).getText();
             String expectedVerify_Authorization="Authorization";
             Assert.assertEquals(actualVerify_Authorization,expectedVerify_Authorization);
-            CRM_Utilities.crm_login(driver, s, password);
+            CRM_Utilities.crm_login(driver, username, password);
             driver.close();
         }
     }
