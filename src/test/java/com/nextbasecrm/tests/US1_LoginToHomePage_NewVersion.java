@@ -2,16 +2,11 @@ package com.nextbasecrm.tests;
 
 
 import com.nextbasecrm.utilities.CRM_Utilities;
-import com.nextbasecrm.utilities.Utilities_For_Login;
 import com.nextbasecrm.utilities.WebDriverFactory;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.util.concurrent.TimeUnit;
-
 import static com.nextbasecrm.utilities.Utilities_For_Login.*;
 
 public class US1_LoginToHomePage_NewVersion {
