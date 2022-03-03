@@ -31,6 +31,35 @@ WebElement verify;
     WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log In']"));
     loginButton.click();
 
+    WebElement dropDownMenu = driver.findElement(By.xpath("//*[@id=\"user-block\"]"));
+    dropDownMenu.click();
+
+    WebElement logoutBtn = driver.findElement(By.xpath("//*[@id=\"popup-window-content-menu-popup-user-menu\"]/div/div/a[3]/span[2]"));
+
+    logoutBtn.click();
+
+    verify = driver.findElement(By.xpath("//*[@id=\"login-popup\"]"));
+
+    verify.isDisplayed();
+
+// =====================================================================================================================
+
+}
+
+@Test
+   public void deskTopOptionTest1(){
+    driver.get("https://login2.nextbasecrm.com/");
+    WebElement inputUserName1 = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
+    inputUserName1.sendKeys("hr67@cydeo.com ");
+    WebElement inputPassword1 = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
+    inputPassword1.sendKeys("UserUser");
+
+    WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log In']"));
+    loginButton.click();
+
+    WebElement dropDownMenu = driver.findElement(By.xpath("//*[@id=\"user-block\"]"));
+    dropDownMenu.click();
+
     WebElement logoutBtn = driver.findElement(By.xpath("//*[@id=\"popup-window-content-menu-popup-user-menu\"]/div/div/a[3]/span[2]"));
 
     logoutBtn.click();
@@ -40,6 +69,33 @@ WebElement verify;
     verify.isDisplayed();
 
 }
+
+// =====================================================================================================================
+
+    @Test
+     public void deskTopOptionTest2(){
+
+        driver.get("https://login2.nextbasecrm.com/");
+        WebElement inputUserName1 = driver.findElement(By.xpath("//input[@name='USER_LOGIN']"));
+        inputUserName1.sendKeys("marketing67@cydeo.com  ");
+        WebElement inputPassword1 = driver.findElement(By.xpath("//input[@name='USER_PASSWORD']"));
+        inputPassword1.sendKeys("UserUser");
+
+        WebElement loginButton = driver.findElement(By.xpath("//input[@value='Log In']"));
+        loginButton.click();
+
+        WebElement dropDownMenu = driver.findElement(By.xpath("//*[@id=\"user-block\"]"));
+        dropDownMenu.click();
+
+        WebElement logoutBtn = driver.findElement(By.xpath("//*[@id=\"popup-window-content-menu-popup-user-menu\"]/div/div/a[3]/span[2]"));
+
+        logoutBtn.click();
+
+        verify = driver.findElement(By.xpath("//*[@id=\"login-popup\"]"));
+
+        verify.isDisplayed();
+
+    }
 
     @AfterMethod
     public void tearDown() {
