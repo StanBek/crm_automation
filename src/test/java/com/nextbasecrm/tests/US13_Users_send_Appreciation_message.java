@@ -59,6 +59,10 @@ public class US13_Users_send_Appreciation_message {
         WebElement sendButton = driver.findElement(By.xpath("//button[@id='blog-submit-button-save']"));
         sendButton.click();
 
+        //verify message display under activity stream
+        WebElement message = driver.findElement(By.xpath("//div[starts-with(@id,'blog_post_body')]"));
+        Assert.assertEquals(message.getText(),"appreciation message test 1");
+
     }
 
     @Test
@@ -92,6 +96,10 @@ public class US13_Users_send_Appreciation_message {
         WebElement sendButton = driver.findElement(By.xpath("//button[@id='blog-submit-button-save']"));
         sendButton.click();
 
+        //verify message display under activity stream
+        WebElement message = driver.findElement(By.xpath("//div[starts-with(@id,'blog_post_body')]"));
+        Assert.assertEquals(message.getText(),"testTestTest");
+
     }
 
     @Test
@@ -124,6 +132,10 @@ public class US13_Users_send_Appreciation_message {
         //click send button
         WebElement sendButton = driver.findElement(By.xpath("//button[@id='blog-submit-button-save']"));
         sendButton.click();
+
+        //verify message display under activity stream
+        WebElement message = driver.findElement(By.xpath("//div[starts-with(@id,'blog_post_body')]"));
+        Assert.assertEquals(message.getText(),"appreciation message test 2");
 
     }
 
